@@ -1,21 +1,37 @@
-//Made by f0lie
-
 #define _CRT_SECURE_NO_WARNINGS 1
 #define SIZE 10
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 //char[SIZE][SIZE] is the grid. int[] is the car
-void display(char[SIZE][SIZE]);
-void makeGrid(char[SIZE][SIZE]);
-int update(int[SIZE][SIZE], int[], char);
-void updateBoundary(int[]);
-void updateWall(char[SIZE][SIZE], int[], char);
-void updateWall(char[SIZE][SIZE], int[]);
-void move(char[SIZE][SIZE], int[], char);
+
+//displays the grid and the cars coords
+void display(char grid[SIZE][SIZE], int car[]);
+
+//fills the grid with '-'
+void makeGrid(char grid[SIZE][SIZE]);
+
+//limits the car's coords to to (0,SIZE-1)
+//blocks the car if there is a wall
+//the car explodes if there is a bomb
+int update(char grid[SIZE][SIZE], int car[], char direct);
+
+//if car is beyond boundary then place car back into grid
+void updateBoundary(int car[]);
+
+//if car hits walls then place car back to original position
+void updateWall(char grid[SIZE][SIZE], int car[], char direct);
+
+//removes car from grid and changes coords based from keyboard
+void move(char grid[SIZE][SIZE], int car[], char direct);
+
+//displays directions for the car
 void displayDirections();
-void makeValue(char[SIZE][SIZE], int, int, int, char);
+
+//changes the value on the grid to any char.
+void makeValue(char grid[SIZE][SIZE], int x, int y, int lenX, int lenY, char value);
 
 int main()
 {
