@@ -5,17 +5,17 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 //char[SIZE][SIZE] is the grid. int[] is the car
-void display(char[SIZE][SIZE]);
+void display(char[SIZE][SIZE], int*);
 void makeGrid(char[SIZE][SIZE]);
-int update(int[SIZE][SIZE], int[], char);
+int update(char[SIZE][SIZE], int[], char);
 void updateBoundary(int[]);
 void updateWall(char[SIZE][SIZE], int[], char);
-void updateWall(char[SIZE][SIZE], int[]);
 void move(char[SIZE][SIZE], int[], char);
 void displayDirections();
-void makeValue(char[SIZE][SIZE], int, int, int, char);
+void makeValue(char[SIZE][SIZE], int, int, int, int, char);
 
 int main()
 {
