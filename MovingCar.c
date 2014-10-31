@@ -38,7 +38,7 @@ void makeValue(char grid[SIZE][SIZE], int x, int y, int lenX, int lenY, char val
 
 int main()
 {
-	srand(time(NULL)); //sets the seed of random to the current time
+	srand((unsigned int)time(NULL)); //sets the seed of random to the current time
 
 	char grid[SIZE][SIZE];
 	int car[2] = { 0, 0 };
