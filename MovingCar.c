@@ -18,6 +18,9 @@ void makeGrid(char grid[SIZE][SIZE]);
 //the car explodes if there is a bomb
 int update(char grid[SIZE][SIZE], int car[], char direct);
 
+//if car hits the bomb (B0 then it returns 1, if not then it returns 0
+int updateBomb(char grid[SIZE][SIZE], int car[]);
+
 //if car is beyond boundary then place car back into grid
 void updateBoundary(int car[]);
 
